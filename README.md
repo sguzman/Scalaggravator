@@ -1,6 +1,6 @@
-# UCSB GOLD Miner
+# ScalAggravator
 
-A scala project that retrieves UCSB classes from GOLD
+A UCSB GOLD scraper
 
 ![A scala project](https://i.imgur.com/VdpZ4YQ.png)
 
