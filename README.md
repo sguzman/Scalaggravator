@@ -4,10 +4,7 @@ A scala project that retrieves UCSB classes from GOLD
 
 ![A scala project](https://i.imgur.com/VdpZ4YQ.png)
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/sguzman/UCSBGoldMiner.svg?columns=all)](https://waffle.io/sguzman/UCSBGoldMiner)
-
-[![HitCount](http://hits.dwyl.io/sguzman/UCSBGoldMiner.svg)](http://hits.dwyl.io/sguzman/UCSBGoldMiner)
-![Travis CI](https://travis-ci.org/sguzman/UCSBGoldMiner.svg?branch=master)
-[![codecov](https://codecov.io/gh/sguzman/UCSBGoldMiner/branch/master/graph/badge.svg)](https://codecov.io/gh/sguzman/UCSBGoldMiner)
+[![HitCount](http://hits.dwyl.io/sguzman/Scalaggravator.svg)](http://hits.dwyl.io/sguzman/Scalaggravator)
+![Travis CI](https://travis-ci.org/sguzman/Scalaggravator.svg?branch=master)
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b8d32d97136a4164a50fdbebb9bc4ab8)](https://www.codacy.com/app/guzmansalv/UCSBGoldMiner?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sguzman/UCSBGoldMiner&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bbff53e99a73454aaac14c52a191760e)](https://www.codacy.com/app/guzmansalv/Scalaggravator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sguzman/Scalaggravator&amp;utm_campaign=Badge_Grade)
