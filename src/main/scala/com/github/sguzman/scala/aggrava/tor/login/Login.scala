@@ -1,15 +1,11 @@
-package com.github.sguzman.scala.ucsb.gold.miner.login
+package com.github.sguzman.scala.aggrava.tor.login
 
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets.UTF_8
 
-import com.github.sguzman.scala.ucsb.gold.miner.args.Args
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL._
+import com.github.sguzman.scala.aggrava.tor.args.Args
 
 import scala.util.{Failure, Success}
-import scalaj.http.{Http, HttpRequest, HttpResponse}
 
 object Login {
   def get: HttpRequest = {

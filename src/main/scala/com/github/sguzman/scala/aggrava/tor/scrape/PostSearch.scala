@@ -1,4 +1,4 @@
-package com.github.sguzman.scala.ucsb.gold.miner.scrape
+package com.github.sguzman.scala.aggrava.tor.scrape
 
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets.UTF_8

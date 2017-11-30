@@ -1,4 +1,4 @@
-package com.github.sguzman.scala.ucsb.gold.miner.scrape
+package com.github.sguzman.scala.aggrava.tor.scrape
 
 import net.ruippeixotog.scalascraper.browser.{Browser, JsoupBrowser}
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._

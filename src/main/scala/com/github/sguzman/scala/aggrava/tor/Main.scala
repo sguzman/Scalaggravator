@@ -1,5 +1,9 @@
-package com.github.sguzman.scala.ucsb.gold.miner
+package com.github.sguzman.scala.aggrava.tor
 
+import com.github.sguzman.scala.aggrava.tor.args.Args
+import com.github.sguzman.scala.aggrava.tor.filter.CourseSplittify
+import com.github.sguzman.scala.aggrava.tor.login.Login
+import com.github.sguzman.scala.aggrava.tor.scrape.PostSearch
 import com.github.sguzman.scala.ucsb.gold.miner.args.Args
 import com.github.sguzman.scala.ucsb.gold.miner.filter.CourseSplittify
 import com.github.sguzman.scala.ucsb.gold.miner.login.Login
