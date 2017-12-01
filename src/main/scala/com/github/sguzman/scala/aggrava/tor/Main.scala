@@ -22,7 +22,10 @@ object Main {
     println(arguments)
 
     val loginsForArgs = arguments.par map (_ => Login(argv))
-    println(loginsForArgs)
+    val results = arguments.zip(loginsForArgs).par
+      .map(t => (t._1._1, t._1._2, t._2)).map(t => Search(t._1, t._2, t._3))
+
+    println(results)
   }
 }
 
