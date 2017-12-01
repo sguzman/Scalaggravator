@@ -3,7 +3,6 @@ package com.github.sguzman.scala.aggrava.tor
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets.UTF_8
 
-import com.github.sguzman.scala.aggrava.tor.args.Args
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL._

@@ -1,4 +1,4 @@
-package com.github.sguzman.scala.aggrava.tor.args
+package com.github.sguzman.scala.aggrava.tor
 
 import com.beust.jcommander.{JCommander, Parameter}
 
