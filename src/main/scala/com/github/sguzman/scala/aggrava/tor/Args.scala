@@ -53,6 +53,19 @@ class Args {
     order = 4
   )
   var help: Boolean = false
+
+  @Parameter(
+    names = Array("-d", "--debug"),
+    description = "Debug mode",
+    arity = 0,
+    echoInput = true,
+    hidden = true,
+    required = false,
+    password = false,
+    help = false,
+    order = 5
+  )
+  var debug: Boolean = false
 }
 
 object Args {
