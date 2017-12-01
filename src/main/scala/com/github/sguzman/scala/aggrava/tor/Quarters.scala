@@ -3,6 +3,7 @@ package com.github.sguzman.scala.aggrava.tor
 import java.net.HttpCookie
 
 import net.ruippeixotog.scalascraper.browser.{Browser, JsoupBrowser}
+import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
 
 import scalaj.http.{Http, HttpRequest, HttpResponse}
