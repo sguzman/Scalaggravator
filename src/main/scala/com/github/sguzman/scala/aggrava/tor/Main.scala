@@ -22,20 +22,6 @@ object Main {
   }
 }
 
-object Departments {
-  private def get(cookies: IndexedSeq[HttpCookie]): HttpResponse[String] = {
-    val url = "https://my.sa.ucsb.edu/gold/BasicFindCourses.aspx"
-    Http(url)
-      .header("Cookie", cookies.mkString("; ")).asString
-  }
 
-  def apply(response: HttpResponse[String]): List[String] = {
-    val id = "pageContent_subjectAreaDropDown"
-    val basicFindCoursesPage = get(response.cookies)
-    val doc = JsoupBrowser().parseString(basicFindCoursesPage.body)
-    val menu = doc >> elementList(s"#$id > option")
-    menu map (_ attr "value")
-  }
-}
 
 
