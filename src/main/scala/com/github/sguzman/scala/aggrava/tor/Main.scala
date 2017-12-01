@@ -25,6 +25,11 @@ object Login {
       case Success(r) => if (r.body.contains("Error")) None else Some(r)
       case Failure(e) => None
     }
+
+  def getUntilSome(req: HttpRequest): HttpResponse[String] = {
+    val resp = getSome(req)
+    if (resp.isEmpty) getUntilSome(req)
+    else resp.get
   }
 
   def apply(argv: Args): HttpRequest = {
