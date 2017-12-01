@@ -13,11 +13,13 @@ import scalaj.http.{Http, HttpRequest}
 object Main {
   def main(args: Array[String]): Unit = {
     val argv = Args(args)
-    val lgn = login(argv)
+    val lgn = Login(argv)
 
   }
+}
 
-  def login(argv: Args): HttpRequest = {
+object Login {
+  def apply(argv: Args): HttpRequest = {
     println("login")
     val url = "https://my.sa.ucsb.edu/gold/login.aspx"
     val resp = Http(url)
