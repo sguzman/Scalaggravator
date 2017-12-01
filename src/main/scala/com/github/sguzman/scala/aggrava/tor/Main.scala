@@ -20,9 +20,8 @@ object Main {
 }
 
 object Login {
-  def getSome(args: Args): Option[HttpResponse[String]] = {
-    val resp = util.Try(Login(args).asString)
-    resp match {
+  def getSome(req: HttpRequest): Option[HttpResponse[String]] =
+    util.Try(req.asString) match {
       case Success(r) => if (r.body.contains("Error")) None else Some(r)
       case Failure(e) => None
     }
