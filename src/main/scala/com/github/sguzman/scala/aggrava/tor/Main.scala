@@ -20,19 +20,19 @@ object Main {
 }
 
 object Login {
-  def getSome(req: HttpRequest): Option[HttpResponse[String]] =
+  private def getSome(req: HttpRequest): Option[HttpResponse[String]] =
     util.Try(req.asString) match {
       case Success(r) => if (r.body.contains("Error")) None else Some(r)
       case Failure(e) => None
     }
 
-  def getUntilSome(req: HttpRequest): HttpResponse[String] = {
+  private def getUntilSome(req: HttpRequest): HttpResponse[String] = {
     val resp = getSome(req)
     if (resp.isEmpty) getUntilSome(req)
     else resp.get
   }
 
-  def login(argv: Args): HttpRequest = {
+  private def login(argv: Args): HttpRequest = {
     val url = "https://my.sa.ucsb.edu/gold/login.aspx"
     val resp = Http(url)
 
