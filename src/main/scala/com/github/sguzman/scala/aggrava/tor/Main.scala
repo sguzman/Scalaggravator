@@ -8,7 +8,8 @@ import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL._
 
-import scalaj.http.{Http, HttpRequest}
+import scala.util.{Failure, Success}
+import scalaj.http.{Http, HttpRequest, HttpResponse}
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -19,6 +20,14 @@ object Main {
 }
 
 object Login {
+  def getSome(args: Args): Option[HttpResponse[String]] = {
+    val resp = util.Try(Login(args).asString)
+    resp match {
+      case Success(r) => if (r.body.contains("Error")) None else Some(r)
+      case Failure(e) => None
+    }
+  }
+
   def apply(argv: Args): HttpRequest = {
     println("login")
     val url = "https://my.sa.ucsb.edu/gold/login.aspx"
