@@ -7,6 +7,7 @@ import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
 
+import scala.language.reflectiveCalls
 import scala.util.{Failure, Success}
 import scalaj.http.{Http, HttpRequest, HttpResponse}
 
