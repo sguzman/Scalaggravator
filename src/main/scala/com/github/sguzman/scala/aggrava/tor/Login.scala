@@ -55,4 +55,10 @@ object Login {
 
     some
   }
+
+  def apply[A <: { def length: Int }](a: A, args: Args): List[HttpResponse[String]] =
+    apply(a.length, args)
+
+  def apply(num: Int, args: Args): List[HttpResponse[String]] =
+    List.tabulate(num)(_ => Login(args))
 }
