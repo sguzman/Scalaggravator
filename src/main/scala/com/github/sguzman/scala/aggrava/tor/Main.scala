@@ -15,31 +15,11 @@ object Main {
 
     val quarters = Quarters(lgn)
     println(quarters)
+
+    val logins = quarters.map(_ => Login(argv))
+    val departments = quarters.zip(logins).map(a => a._1 -> Quar)
   }
 }
 
-object Quarters {
-  def apply(req: HttpResponse[String]): List[String] = {
-    val url = "https://my.sa.ucsb.edu/gold/BasicFindCourses.aspx"
-    val basicFindCourses = get(req.cookies).asString
-    val doc = JsoupBrowser().parseString(basicFindCourses.body)
 
-    val quarts = quarters(doc)
-    quarts
-  }
-
-  private def get(cookies: IndexedSeq[HttpCookie]): HttpRequest = {
-    val url = "https://my.sa.ucsb.edu/gold/BasicFindCourses.aspx"
-    Http(url)
-      .header("Cookie", cookies.mkString("; "))
-  }
-
-  private def quarters(doc: Browser#DocumentType): List[String] = {
-    val id = "pageContent_quarterDropDown"
-    val menu = doc >> elementList(s"#$id > option")
-
-    val values = menu.map(_.attr("value"))
-    values
-  }
-}
 
