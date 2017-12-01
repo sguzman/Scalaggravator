@@ -32,8 +32,7 @@ object Login {
     else resp.get
   }
 
-  def apply(argv: Args): HttpRequest = {
-    println("login")
+  def login(argv: Args): HttpRequest = {
     val url = "https://my.sa.ucsb.edu/gold/login.aspx"
     val resp = Http(url)
 
