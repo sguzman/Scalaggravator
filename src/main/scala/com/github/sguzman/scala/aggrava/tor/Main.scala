@@ -15,7 +15,7 @@ object Main {
         .filter(_.nonEmpty))
     println(deptsByQuarts)
 
-    val arguments = deptsByQuarts flatMap (t => t._2 map ((t._1, _)))
+    val arguments = deptsByQuarts.filter(_._1 == "20174").flatMap(t => t._2.map((t._1, _)))
     println(arguments)
 
     val loginsForArgs = arguments.par map (_ => Login(argv))
