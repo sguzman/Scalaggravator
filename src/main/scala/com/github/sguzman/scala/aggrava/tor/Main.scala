@@ -1,12 +1,12 @@
 package com.github.sguzman.scala.aggrava.tor
 
 import java.net.URLEncoder
+import java.nio.charset.StandardCharsets.UTF_8
 
 import com.github.sguzman.scala.aggrava.tor.args.Args
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
+import net.ruippeixotog.scalascraper.dsl.DSL._
 
 import scalaj.http.{Http, HttpRequest}
 
@@ -24,8 +24,7 @@ object Login {
     val url = "https://my.sa.ucsb.edu/gold/login.aspx"
     val resp = Http(url)
 
-    val soup = JsoupBrowser()
-    val doc = soup.parseString(resp.asString.body)
+    val doc = JsoupBrowser().parseString(resp.asString.body)
     val hidden = doc >> elementList("""input[type="hidden"]""")
     val hiddenVals = hidden.map(s => List(s.attr("name"), s.attr("value")))
     val inputVals = if (argv.old) List(
