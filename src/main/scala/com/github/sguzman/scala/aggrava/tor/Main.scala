@@ -12,12 +12,13 @@ object Main {
   def main(args: Array[String]): Unit = {
     val argv = Args(args)
     val lgn = Login(argv)
-    val quarters = Scrape(lgn)
+
+    val quarters = Quarters(lgn)
     println(quarters)
   }
 }
 
-object Scrape {
+object Quarters {
   def apply(req: HttpResponse[String]): List[String] = {
     val url = "https://my.sa.ucsb.edu/gold/BasicFindCourses.aspx"
     val basicFindCourses = get(req.cookies).asString
