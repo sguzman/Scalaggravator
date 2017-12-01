@@ -7,7 +7,6 @@ import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
 
-import scala.language.reflectiveCalls
 import scala.util.{Failure, Success}
 import scalaj.http.{Http, HttpRequest, HttpResponse}
 
@@ -56,10 +55,4 @@ object Login {
 
     some
   }
-
-  def apply[A <: { def length: Int }](a: A, args: Args): List[HttpResponse[String]] =
-    apply(a.length, args)
-
-  def apply(num: Int, args: Args): List[HttpResponse[String]] =
-    List.tabulate(num)(_ => Login(args))
 }
