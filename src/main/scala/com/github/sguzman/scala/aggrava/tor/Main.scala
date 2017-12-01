@@ -57,4 +57,11 @@ object Login {
     val request = resp.postData(form)
     request
   }
+
+  def apply(args: Args): HttpResponse[String] = {
+    val lgn = login(args)
+    val some = getUntilSome(lgn)
+
+    some
+  }
 }
