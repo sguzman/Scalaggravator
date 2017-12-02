@@ -11,7 +11,6 @@ object Main {
     val logins = quarters.par map (_ => Login(argv))
     val deptsByQuarts =
       quarters zip logins map (a => a._1 -> Departments(a._2)
-        .map(_.trim)
         .filter(_.nonEmpty))
     deptsByQuarts foreach println
 
