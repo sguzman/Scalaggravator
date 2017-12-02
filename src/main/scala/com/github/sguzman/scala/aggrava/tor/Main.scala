@@ -22,8 +22,8 @@ object Main {
     arguments foreach println
 
     val loginsForArgs = arguments.par map (_ => Login(argv))
-    val results = arguments.zip(loginsForArgs).par
-      .map(t => (t._1._1, t._1._2, t._2)).map(t => Search(t._1, t._2, t._3))
+    val searchArgs = arguments.zip(loginsForArgs)
+      .map(t => (t._1._1, t._1._2, t._2))
 
     val results = searchArgs.map(t => Search(t._1, t._2, t._3))
     results foreach println
