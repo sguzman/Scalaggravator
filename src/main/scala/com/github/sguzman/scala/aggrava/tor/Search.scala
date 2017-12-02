@@ -26,7 +26,8 @@ object Search {
     val bodyPairs = hiddenVals ++ inputVals
     val form = bodyPairs.map(s => s"${s.head}=${URLEncoder.encode(s(1), UTF_8.toString)}").mkString("&")
 
-    val resp = basicCoursePageRequest.postData(form).asString
+    val request = basicCoursePageRequest.postData(form)
+    val resp = request.asString
     resp
   }
 
