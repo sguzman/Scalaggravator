@@ -25,10 +25,10 @@ object Main {
       .map(t => (t._1._1, t._1._2, t._2))
 
     val results = searchArgs.map(t => Search(t._1, t._2, t._3))
-    results foreach println
-
     val resultResponses = loginsForArgs.par map (_.cookies) map Search.results
-    resultResponses foreach println
+
+    val parsed = resultResponses.par map Split.apply
+    parsed foreach println
   }
 }
 
