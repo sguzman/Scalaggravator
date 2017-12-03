@@ -10,7 +10,7 @@ import net.ruippeixotog.scalascraper.dsl.DSL._
 import scalaj.http.{Http, HttpRequest, HttpResponse}
 
 object Search {
-  def apply(quarter: String, department: String, response: HttpResponse[String]) = {
+  def apply(quarter: String, department: String, response: HttpResponse[String]): HttpResponse[String] = {
     val basicCoursePageRequest = basicCoursePage(response.cookies)
 
     val doc = JsoupBrowser().parseString(basicCoursePageRequest.asString.body)
