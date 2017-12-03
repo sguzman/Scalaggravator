@@ -26,6 +26,9 @@ object Main {
 
     val results = searchArgs.map(t => Search(t._1, t._2, t._3))
     results foreach println
+
+    val resultResponses = loginsForArgs.par map (_.cookies) map Search.results
+    resultResponses foreach println
   }
 }
 

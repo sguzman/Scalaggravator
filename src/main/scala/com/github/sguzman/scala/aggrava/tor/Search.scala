@@ -7,7 +7,7 @@ import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL._
 
-import scalaj.http.{Http, HttpOptions, HttpRequest, HttpResponse}
+import scalaj.http.{Http, HttpRequest, HttpResponse}
 
 object Search {
   def apply(quarter: String, department: String, response: HttpResponse[String]): HttpResponse[String] = {
@@ -26,7 +26,7 @@ object Search {
     val bodyPairs = hiddenVals ++ inputVals
     val form = bodyPairs.map(s => s"${s.head}=${URLEncoder.encode(s(1), UTF_8.toString)}").mkString("&")
 
-    val request = basicCoursePageRequest.postData(form).option(HttpOptions.followRedirects(true))
+    val request = basicCoursePageRequest.postData(form)
     val resp = request.asString
     resp
   }
