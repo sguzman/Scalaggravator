@@ -24,15 +24,20 @@ object Main {
     println("Ready Player 1")
     Server.listen(port) {
       case GET at url"/$quarter/$department/$course" =>
-        Ok(Filter.byCourseJson(model, quarter, department, course))
+        wrapWithCORSHeaders(Ok(Filter.byCourseJson(model, quarter, department, course)))
       case GET at url"/$quarter/$department" =>
-        Ok(Filter.byDepartmentJson(model, quarter, department))
+        wrapWithCORSHeaders(Ok(Filter.byDepartmentJson(model, quarter, department)))
       case GET at url"/$quarter" =>
-        Ok(Filter.byQuarterJson(model, quarter))
+        wrapWithCORSHeaders(Ok(Filter.byQuarterJson(model, quarter)))
       case GET at "/" =>
-        Ok(json)
+        wrapWithCORSHeaders(Ok(json))
       case _ =>
         NotFound
     }
   }
+
+  def wrapWithCORSHeaders(ok: Response): Response = ok.addHeaders(
+    (HttpString("Access-Control-Allow-Origin"), HttpString("*")),
+    (HttpString("Access-Control-Allow-Headers"), HttpString("Origin, X-Requested-With, Content-Type, Accept"))
+  )
 }
