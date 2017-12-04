@@ -1,4 +1,4 @@
-package com.github.sguzman.scala.aggrava.tor
+package com.github.sguzman.scala.aggrava.tor.retrieve
 
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets.UTF_8

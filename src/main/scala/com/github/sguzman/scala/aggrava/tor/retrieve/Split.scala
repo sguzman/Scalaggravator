@@ -1,4 +1,4 @@
-package com.github.sguzman.scala.aggrava.tor
+package com.github.sguzman.scala.aggrava.tor.retrieve
 
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._

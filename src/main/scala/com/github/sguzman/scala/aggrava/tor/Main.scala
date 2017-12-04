@@ -1,5 +1,7 @@
 package com.github.sguzman.scala.aggrava.tor
 
+import com.github.sguzman.scala.aggrava.tor.retrieve._
+
 object Main {
   def main(args: Array[String]): Unit = {
     val argv = Args(args)
