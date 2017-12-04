@@ -25,6 +25,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "com.beust" % "jcommander" % "1.72",
   "com.google.code.gson" % "gson" % "2.8.2",
+  "com.criteo.lolhttp" % "lolhttp_2.12" % "0.8.1",
   "net.ruippeixotog" %% "scala-scraper" % "2.0.0",
   "org.scalaj" %% "scalaj-http" % "2.3.0",
   "org.slf4j" % "slf4j-api" % "1.7.25",
