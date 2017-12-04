@@ -10,10 +10,7 @@ import scala.util.{Failure, Success}
 object Main {
   def main(args: Array[String]): Unit = {
     val raw = Retrieve(args)
-    println(raw)
-
     val model = Model(raw)
-    println(model)
 
     val gson = new GsonBuilder().create
     val json = gson.toJson()
