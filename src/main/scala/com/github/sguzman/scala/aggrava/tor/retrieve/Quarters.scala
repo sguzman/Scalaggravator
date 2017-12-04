@@ -8,7 +8,7 @@ import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
 
 import scalaj.http.{Http, HttpRequest, HttpResponse}
 
-object Quarters {
+private object Quarters {
   def apply(req: HttpResponse[String]): List[String] = {
     val url = "https://my.sa.ucsb.edu/gold/BasicFindCourses.aspx"
     val basicFindCourses = get(req.cookies).asString

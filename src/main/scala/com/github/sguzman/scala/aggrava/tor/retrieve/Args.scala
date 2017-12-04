@@ -2,7 +2,7 @@ package com.github.sguzman.scala.aggrava.tor.retrieve
 
 import com.beust.jcommander.{JCommander, Parameter}
 
-class Args {
+private class Args {
   @Parameter(
     names = Array("-u", "--user", "--username"),
     description = "UCSB GOLD user name",
@@ -68,7 +68,7 @@ class Args {
   var debug: Boolean = false
 }
 
-object Args {
+private object Args {
   def apply(args: Array[String]): Args = {
     val argv = new Args
     val j = JCommander.newBuilder()

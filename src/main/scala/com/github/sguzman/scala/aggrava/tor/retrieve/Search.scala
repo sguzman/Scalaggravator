@@ -10,7 +10,7 @@ import net.ruippeixotog.scalascraper.dsl.DSL._
 import scala.util.{Failure, Success}
 import scalaj.http.{Http, HttpRequest, HttpResponse}
 
-object Search {
+private object Search {
   def apply(quarter: String,
             department: String,
             response: HttpResponse[String],

@@ -7,8 +7,7 @@ import org.apache.commons.lang3.StringUtils
 
 import scalaj.http.HttpResponse
 
-object Split {
-  def apply(resp: HttpResponse[String]) = {
+private object Split {
     val body = resp.body
     val doc = JsoupBrowser().parseString(body)
 

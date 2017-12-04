@@ -10,7 +10,7 @@ import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
 import scala.util.{Failure, Success}
 import scalaj.http.{Http, HttpRequest, HttpResponse}
 
-object Login {
+private object Login {
   private def getSome(req: HttpRequest): Option[HttpResponse[String]] =
     util.Try(req.asString) match {
       case Success(r) => if (r.body.contains("Error")) None else Some(r)
