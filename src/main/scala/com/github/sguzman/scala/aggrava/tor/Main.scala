@@ -11,7 +11,11 @@ object Main {
     val permutations = raw.flatMap(a => a._3.flatMap(b => b._2.map(c => (a._1, a._2, b._1, c))))
     println(permutations)
 
-    val model = permutations.map(t => Quarter(t._1, Department(t._2, Course(t._3.mkString(" "), Enroll(t._4.mkString(" "))))))
+    val model = permutations.map(t =>
+      Quarter(t._1,
+        Department(t._2,
+          Course(t._3.mkString(" "),
+            Enroll(t._4.mkString(" "))))))
     println(model)
   }
 }
