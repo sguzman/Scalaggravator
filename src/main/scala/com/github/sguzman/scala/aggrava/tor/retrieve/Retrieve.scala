@@ -1,7 +1,9 @@
 package com.github.sguzman.scala.aggrava.tor.retrieve
 
 object Retrieve {
-  def apply(args: Array[String]): List[(String, String, List[(List[String], List[List[String]])])] = {
+  type Raw = List[(String, String, List[(List[String], List[List[String]])])]
+
+  def apply(args: Array[String]): Raw = {
     val argv = Args(args)
     val lgn = Login(argv)
 
