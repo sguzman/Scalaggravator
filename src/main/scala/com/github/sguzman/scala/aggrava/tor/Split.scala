@@ -34,7 +34,7 @@ object Split {
     if (numOfRows == 1) {
       List(rowsInText)
     } else {
-      val enrollCodePattern = """[1-9][0-9][0-9][0-9][0-9]"""
+      val enrollCodePattern = """[0-9][0-9][0-9][0-9][0-9]"""
       val enrollCodes = enrollCodePattern.r.findAllMatchIn(rowsInText).toList
       val splitAtRegex = rowsInText.split(enrollCodePattern).tail
       val addBackEnrollCode = enrollCodes.zip(splitAtRegex).map(t => t._1 + t._2)
