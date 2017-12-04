@@ -18,7 +18,7 @@ object Split {
 
     val numCourses = text map (t => (t.count(_.isEmpty) / 2, t)) filter (_._1 != 0) filter (_._2.length > 4)
     val courseDesc = numCourses.map(l =>
-      StringUtils.substringBefore(l._2.head, "    ") :: l._2(2) :: l._2(3) :: l._1.toString :: Nil)
+      StringUtils.substringBefore(l._2.head, "    ").trim :: l._2(2) :: l._2(3) :: l._1.toString :: Nil)
     val splitByRow = numCourses map splitRow
     val splitByColumn = splitByRow map (_ map splitColumn)
 
