@@ -30,7 +30,6 @@ object Main {
     val parsed = resultResponses.par map Split.apply
     parsed foreach println
 
-
     val quartDeptCourses = arguments.zip(parsed).map(t => (t._1._1, t._1._2, t._2))
     quartDeptCourses foreach println
   }
