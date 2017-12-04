@@ -1,6 +1,7 @@
 package com.github.sguzman.scala.aggrava.tor.retrieve
 
 import com.beust.jcommander.{JCommander, Parameter}
+import org.feijoas.mango.common.base.Preconditions
 
 private class Args {
   @Parameter(
@@ -69,7 +70,15 @@ private class Args {
 }
 
 private object Args {
-  def apply(args: Array[String]): Args = {
+  def apply(cmdArgs: Array[String]): Args = {
+    val args = if (cmdArgs.length == 0) {
+      val user = System.getenv("USER")
+      val pass = System.getenv("PASS")
+      val old = if (System.getenv("OLD") == "t") "-o" else ""
+      Preconditions.checkArgument(user.nonEmpty, "Missing user var env")
+      Preconditions.checkArgument(pass.nonEmpty, "Missing pass var env")
+      Array("-u", user, "-p", pass, old)
+    } else cmdArgs
     val argv = new Args
     val j = JCommander.newBuilder()
       .addObject(argv)
