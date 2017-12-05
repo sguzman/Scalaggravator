@@ -27,7 +27,7 @@ private object Login {
     val url = "https://my.sa.ucsb.edu/gold/login.aspx"
     val resp = Http(url)
 
-    val doc = JsoupBrowser().parseString(resp.asString.body)
+    val doc = JsoupBrowser().parseString(getUntilSome(resp).body)
     val hidden = doc >> elementList("""input[type="hidden"]""")
     val hiddenVals = hidden.map(s => List(s.attr("name"), s.attr("value")))
     val inputVals = if (argv.old) List(
