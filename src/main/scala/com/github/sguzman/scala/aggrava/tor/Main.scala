@@ -18,7 +18,7 @@ object Main {
 
     val port = util.Try(System.getenv("PORT").toInt) match {
       case Success(v) => v
-      case Failure(e) => 9090
+      case Failure(_) => 9090
     }
 
     println("Ready Player 1")
